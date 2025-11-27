@@ -20,6 +20,8 @@
     --primary-bg: #0B132B;              /* Midnight Sapphire */
     --secondary-bg: #1C2541;            /* Darker variant */
     --card-bg: rgba(11, 19, 43, 0.6);
+    --light-bg: #F8F9FA;                /* Light section background */
+    --white-bg: #FFFFFF;                /* Pure white */
 
     /* Accent Colors */
     --accent-blue: #2563EB;             /* Royal Electric Blue */
@@ -34,6 +36,7 @@
     --text-secondary: #D1D5DB;          /* Lighter grey */
     --text-muted: #9CA3AF;              /* Graphite Grey variant */
     --text-dark: #4B5563;               /* Graphite Grey */
+    --text-on-light: #1F2937;           /* Dark text for light backgrounds */
 
     /* Glass Effects */
     --glass-bg: rgba(243, 244, 246, 0.05);
@@ -43,6 +46,7 @@
     --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
     --glow-blue: 0 0 20px var(--accent-blue-glow);
     --glow-teal: 0 0 20px var(--accent-teal-glow);
     --glow-gold: 0 0 20px var(--accent-gold-glow);
@@ -181,12 +185,11 @@ p {
     position: sticky;
     top: 0;
     width: 100%;
-    background: rgba(26, 26, 46, 0.9);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--glass-border);
+    background: #000000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1.2rem 0;
     z-index: 1000;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
 .header-container {
@@ -1068,6 +1071,46 @@ p {
 }
 
 /* ==========================================
+   SECTION STYLES - Alternating Light/Dark
+   ========================================== */
+.section-light {
+    background: var(--light-bg);
+    position: relative;
+}
+
+.section-light h2,
+.section-light h3,
+.section-light h4 {
+    color: var(--text-on-light);
+}
+
+.section-light p,
+.section-light li {
+    color: var(--text-dark);
+}
+
+.section-white {
+    background: var(--white-bg);
+    position: relative;
+}
+
+.section-white h2,
+.section-white h3,
+.section-white h4 {
+    color: var(--text-on-light);
+}
+
+.section-white p,
+.section-white li {
+    color: var(--text-dark);
+}
+
+.section-dark {
+    background: var(--primary-bg);
+    position: relative;
+}
+
+/* ==========================================
    UTILITY CLASSES
    ========================================== */
 .text-center { text-align: center; }
@@ -1455,4 +1498,222 @@ p {
 .parallax-container {
     transform-style: preserve-3d;
     transition: transform 0.1s ease;
+}
+
+/* ==========================================
+   SERVICES GRID - Nexella Style
+   ========================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.service-card {
+    background: var(--white-bg);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    transition: all var(--transition-medium);
+    border: 1px solid #E5E7EB;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0%;
+    background: linear-gradient(180deg, var(--accent-blue), var(--accent-teal));
+    transition: height var(--transition-medium);
+}
+
+.service-card:hover::before {
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-teal));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+    color: white;
+}
+
+.service-card h3 {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.5rem;
+    color: var(--text-on-light);
+}
+
+.service-card p {
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+/* ==========================================
+   PROCESS TIMELINE - Nexella Style
+   ========================================== */
+.process-timeline {
+    position: relative;
+    padding: var(--spacing-lg) 0;
+}
+
+.timeline-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    position: relative;
+}
+
+.timeline-item {
+    text-align: center;
+    position: relative;
+}
+
+.timeline-number {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-teal));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    margin: 0 auto var(--spacing-sm);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+}
+
+.timeline-item h4 {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.3rem;
+}
+
+.timeline-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   MODERN CARD STYLES
+   ========================================== */
+.modern-card {
+    background: var(--white-bg);
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-light);
+    border: 1px solid #E5E7EB;
+    transition: all var(--transition-medium);
+}
+
+.modern-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.modern-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ==========================================
+   PORTFOLIO/PROJECT GRID
+   ========================================== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    cursor: pointer;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.portfolio-item:hover .portfolio-image {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(11, 19, 43, 0.95) 100%);
+    padding: var(--spacing-md);
+    transform: translateY(100%);
+    transition: transform var(--transition-medium);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-overlay h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-overlay p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   LIGHT SECTION VALUE CARDS
+   ========================================== */
+.section-light .value-card,
+.section-white .value-card {
+    background: var(--white-bg);
+    border: 1px solid #E5E7EB;
+    box-shadow: var(--shadow-light);
+}
+
+.section-light .value-card::before,
+.section-white .value-card::before {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.section-light .value-card h3,
+.section-white .value-card h3 {
+    color: var(--text-on-light);
+}
+
+.section-light .value-card p,
+.section-white .value-card p {
+    color: var(--text-dark);
+}
+
+.section-light .value-card:hover,
+.section-white .value-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
