@@ -68,7 +68,7 @@ function initParticleBackground() {
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(0, 255, 255, ${this.opacity})`;
+            ctx.fillStyle = `rgba(37, 99, 235, ${this.opacity})`;
             ctx.fill();
         }
     }
@@ -100,7 +100,7 @@ function initParticleBackground() {
 
                 if (distance < 150) {
                     ctx.beginPath();
-                    ctx.strokeStyle = `rgba(0, 255, 255, ${0.15 * (1 - distance / 150)})`;
+                    ctx.strokeStyle = `rgba(37, 99, 235, ${0.15 * (1 - distance / 150)})`;
                     ctx.lineWidth = 1;
                     ctx.moveTo(particle.x, particle.y);
                     ctx.lineTo(particles[j].x, particles[j].y);
@@ -333,9 +333,9 @@ function initPricingPulse() {
     if (!recommendedCard) return;
 
     setInterval(() => {
-        recommendedCard.style.boxShadow = '0 0 40px rgba(0, 255, 255, 0.6)';
+        recommendedCard.style.boxShadow = '0 0 40px rgba(37, 99, 235, 0.6)';
         setTimeout(() => {
-            recommendedCard.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.3)';
+            recommendedCard.style.boxShadow = '0 0 20px rgba(37, 99, 235, 0.3)';
         }, 500);
     }, 3000);
 }
