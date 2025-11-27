@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - Premium Web Hosting | LeyteHost</title>
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         STICKY HEADER & NAVIGATION
+         ========================================== -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">LEYTE<span style="color: #fff;">HOST</span></a>
+
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+            <nav class="nav" id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="pricing.html">Plans</a>
+                <a href="index.html#features">Features</a>
+                <a href="#support">Support</a>
+            </nav>
+
+            <div class="nav-ctas">
+                <a href="#login" class="btn btn-ghost">Login</a>
+                <a href="#pricing" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         PRICING HERO
+         ========================================== -->
+    <section class="section" style="padding-top: 5rem;">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h1>Choose Your Perfect Plan</h1>
+                <p style="max-width: 700px; margin: 0 auto; font-size: 1.2rem;">
+                    Transparent pricing. Enterprise features. No hidden fees. Scale as you grow.
+                </p>
+            </div>
+
+            <!-- ==========================================
+                 MONTHLY / ANNUAL PRICING TOGGLE
+                 ========================================== -->
+            <div class="pricing-toggle-container" id="pricing">
+                <div class="pricing-toggle">
+                    <span class="toggle-label monthly-label active" data-period="monthly">Monthly</span>
+                    <div class="toggle-switch" id="pricingToggle"></div>
+                    <span class="toggle-label annual-label" data-period="annual">Annual</span>
+                    <span class="discount-badge">Save 20%</span>
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 TIERED PRICING CARDS
+                 ========================================== -->
+            <div class="pricing-cards">
+
+                <!-- STARTER PLAN -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <p>Perfect for personal projects and small sites</p>
+                    </div>
+
+                    <div class="pricing-price">
+                        <div class="price-display">
+                            <span class="price-amount" data-monthly="9" data-annual="7">$9</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <div class="annual-savings" style="display: none; margin-top: 0.5rem;">
+                            <span class="original-price">$108/year</span>
+                            <span style="color: var(--accent-cyan); font-weight: 600;">Billed annually at $84/year</span>
+                        </div>
+                    </div>
+
+                    <ul class="pricing-features">
+                        <li>1 Website</li>
+                        <li>50 GB NVMe SSD Storage</li>
+                        <li>Unmetered Bandwidth</li>
+                        <li>Free SSL Certificate</li>
+                        <li>Daily Automated Backups</li>
+                        <li>24/7 Email Support</li>
+                        <li>99.9% Uptime Guarantee</li>
+                    </ul>
+
+                    <div class="pricing-cta">
+                        <a href="#checkout-starter" class="btn btn-secondary">Start Now</a>
+                    </div>
+                </div>
+
+                <!-- PRO PLAN (RECOMMENDED) -->
+                <div class="pricing-card recommended">
+                    <span class="recommended-badge">BEST VALUE</span>
+
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <p>Ideal for growing businesses and professionals</p>
+                    </div>
+
+                    <div class="pricing-price">
+                        <div class="price-display">
+                            <span class="price-amount" data-monthly="29" data-annual="23">$29</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <div class="annual-savings" style="display: none; margin-top: 0.5rem;">
+                            <span class="original-price">$348/year</span>
+                            <span style="color: var(--accent-cyan); font-weight: 600;">Billed annually at $276/year</span>
+                        </div>
+                    </div>
+
+                    <ul class="pricing-features">
+                        <li>Unlimited Websites</li>
+                        <li>200 GB NVMe SSD Storage</li>
+                        <li>Unmetered Bandwidth</li>
+                        <li>Free Wildcard SSL</li>
+                        <li>Hourly Automated Backups</li>
+                        <li>Global CDN Included</li>
+                        <li>Advanced DDoS Protection</li>
+                        <li>Staging Environment</li>
+                        <li>Priority 24/7 Support</li>
+                        <li>99.99% Uptime Guarantee</li>
+                    </ul>
+
+                    <div class="pricing-cta">
+                        <a href="#checkout-pro" class="btn btn-primary">Start Now</a>
+                    </div>
+                </div>
+
+                <!-- ENTERPRISE PLAN -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <p>Custom solutions for mission-critical applications</p>
+                    </div>
+
+                    <div class="pricing-price">
+                        <div class="price-display">
+                            <span class="price-amount" data-monthly="99" data-annual="79">$99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <div class="annual-savings" style="display: none; margin-top: 0.5rem;">
+                            <span class="original-price">$1,188/year</span>
+                            <span style="color: var(--accent-cyan); font-weight: 600;">Billed annually at $948/year</span>
+                        </div>
+                    </div>
+
+                    <ul class="pricing-features">
+                        <li>Unlimited Websites</li>
+                        <li>500 GB NVMe SSD Storage</li>
+                        <li>Unmetered Bandwidth</li>
+                        <li>Free Wildcard SSL</li>
+                        <li>Real-time Backups</li>
+                        <li>Global CDN with Premium Tier</li>
+                        <li>Enterprise DDoS Protection (10 Tbps)</li>
+                        <li>Multiple Staging Environments</li>
+                        <li>Dedicated IP Address</li>
+                        <li>White-label Options</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>24/7 Phone Support</li>
+                        <li>99.99% Uptime SLA</li>
+                    </ul>
+
+                    <div class="pricing-cta">
+                        <a href="#contact-sales" class="btn btn-secondary">Contact Sales</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+                 DETAILED COMPARISON TABLE
+                 ========================================== -->
+            <div class="comparison-section">
+                <h2>Detailed Feature Comparison</h2>
+                <p class="text-center text-secondary mb-2">Compare all features across our hosting plans</p>
+
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Starter</th>
+                                <th>Pro</th>
+                                <th>Enterprise</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- PERFORMANCE FEATURES -->
+                            <tr>
+                                <td colspan="4" class="feature-group-header">Performance & Resources</td>
+                            </tr>
+                            <tr>
+                                <td>Websites Hosted</td>
+                                <td>1</td>
+                                <td>Unlimited</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>NVMe SSD Storage</td>
+                                <td>50 GB</td>
+                                <td>200 GB</td>
+                                <td>500 GB</td>
+                            </tr>
+                            <tr>
+                                <td>Bandwidth</td>
+                                <td>Unmetered</td>
+                                <td>Unmetered</td>
+                                <td>Unmetered</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tooltip-wrapper">
+                                        RAM Allocation
+                                        <span class="info-icon">i</span>
+                                        <span class="tooltip-content">Guaranteed memory for your applications</span>
+                                    </div>
+                                </td>
+                                <td>2 GB</td>
+                                <td>8 GB</td>
+                                <td>16 GB</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tooltip-wrapper">
+                                        CPU Cores
+                                        <span class="info-icon">i</span>
+                                        <span class="tooltip-content">Dedicated processing power</span>
+                                    </div>
+                                </td>
+                                <td>2 vCPU</td>
+                                <td>4 vCPU</td>
+                                <td>8 vCPU</td>
+                            </tr>
+                            <tr>
+                                <td>Global CDN</td>
+                                <td><span class="cross-icon">✕</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span> Premium</td>
+                            </tr>
+
+                            <!-- SECURITY FEATURES -->
+                            <tr>
+                                <td colspan="4" class="feature-group-header">Security & Protection</td>
+                            </tr>
+                            <tr>
+                                <td>Free SSL Certificate</td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span> Wildcard</td>
+                                <td><span class="check-icon">✓</span> Wildcard</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tooltip-wrapper">
+                                        DDoS Protection
+                                        <span class="info-icon">i</span>
+                                        <span class="tooltip-content">Distributed Denial of Service attack mitigation</span>
+                                    </div>
+                                </td>
+                                <td>Basic</td>
+                                <td>Advanced</td>
+                                <td>Enterprise (10 Tbps)</td>
+                            </tr>
+                            <tr>
+                                <td>Web Application Firewall (WAF)</td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span> Advanced</td>
+                            </tr>
+                            <tr>
+                                <td>Automated Backups</td>
+                                <td>Daily</td>
+                                <td>Hourly</td>
+                                <td>Real-time</td>
+                            </tr>
+                            <tr>
+                                <td>Backup Retention</td>
+                                <td>7 days</td>
+                                <td>30 days</td>
+                                <td>90 days</td>
+                            </tr>
+                            <tr>
+                                <td>Malware Scanning</td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span> Advanced</td>
+                            </tr>
+                            <tr>
+                                <td>Two-Factor Authentication</td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                            </tr>
+
+                            <!-- DEVELOPER FEATURES -->
+                            <tr>
+                                <td colspan="4" class="feature-group-header">Developer Tools</td>
+                            </tr>
+                            <tr>
+                                <td>SSH Access</td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Git Integration</td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tooltip-wrapper">
+                                        Staging Environment
+                                        <span class="info-icon">i</span>
+                                        <span class="tooltip-content">Test changes before going live</span>
+                                    </div>
+                                </td>
+                                <td><span class="cross-icon">✕</span></td>
+                                <td>1 Environment</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>WP-CLI / Composer</td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Cron Jobs</td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span> Advanced</td>
+                            </tr>
+                            <tr>
+                                <td>Database Access (MySQL/PostgreSQL)</td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                            </tr>
+
+                            <!-- EMAIL & DOMAIN -->
+                            <tr>
+                                <td colspan="4" class="feature-group-header">Email & Domain</td>
+                            </tr>
+                            <tr>
+                                <td>Email Accounts</td>
+                                <td>10</td>
+                                <td>Unlimited</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>Email Storage</td>
+                                <td>5 GB</td>
+                                <td>50 GB</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>Free Domain (1 year)</td>
+                                <td><span class="cross-icon">✕</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dedicated IP Address</td>
+                                <td><span class="cross-icon">✕</span></td>
+                                <td><span class="cross-icon">✕</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                            </tr>
+
+                            <!-- SUPPORT -->
+                            <tr>
+                                <td colspan="4" class="feature-group-header">Support & SLA</td>
+                            </tr>
+                            <tr>
+                                <td>Support Channels</td>
+                                <td>Email & Chat</td>
+                                <td>Email, Chat & Priority</td>
+                                <td>Email, Chat, Phone & Dedicated</td>
+                            </tr>
+                            <tr>
+                                <td>Response Time</td>
+                                <td>< 24 hours</td>
+                                <td>< 4 hours</td>
+                                <td>< 1 hour</td>
+                            </tr>
+                            <tr>
+                                <td>Dedicated Account Manager</td>
+                                <td><span class="cross-icon">✕</span></td>
+                                <td><span class="cross-icon">✕</span></td>
+                                <td><span class="check-icon">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Uptime Guarantee</td>
+                                <td>99.9%</td>
+                                <td>99.99%</td>
+                                <td>99.99% SLA</td>
+                            </tr>
+                            <tr>
+                                <td>Migration Assistance</td>
+                                <td>Self-service</td>
+                                <td><span class="check-icon">✓</span> Assisted</td>
+                                <td><span class="check-icon">✓</span> White-glove</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FAQ SECTION
+         ========================================== -->
+    <section class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <h2 class="text-center mb-3">Frequently Asked Questions</h2>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="value-card" style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--accent-cyan); margin-bottom: 0.8rem;">Can I upgrade or downgrade my plan?</h4>
+                    <p>Absolutely! You can upgrade or downgrade your plan at any time. Upgrades are instant, and we'll prorate the difference.</p>
+                </div>
+
+                <div class="value-card" style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--accent-cyan); margin-bottom: 0.8rem;">What's your refund policy?</h4>
+                    <p>We offer a 30-day money-back guarantee on all plans. If you're not satisfied, we'll refund your payment—no questions asked.</p>
+                </div>
+
+                <div class="value-card" style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--accent-cyan); margin-bottom: 0.8rem;">Do you offer custom enterprise solutions?</h4>
+                    <p>Yes! For larger organizations with specific requirements, we offer custom infrastructure, dedicated servers, and white-label solutions. Contact our sales team to discuss your needs.</p>
+                </div>
+
+                <div class="value-card">
+                    <h4 style="color: var(--accent-cyan); margin-bottom: 0.8rem;">Is migration included?</h4>
+                    <p>Pro and Enterprise plans include free assisted migration. Our team will handle the entire process to ensure a seamless transition with zero downtime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PRE-FOOTER CTA
+         ========================================== -->
+    <section class="cta-section section">
+        <div class="container">
+            <h2>Still Have Questions?</h2>
+            <p>Our team is here to help you choose the perfect plan for your needs.</p>
+            <a href="#contact" class="btn btn-primary" style="margin-right: 1rem;">Contact Sales</a>
+            <a href="index.html" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company -->
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press Kit</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="pricing.html">Web Hosting</a></li>
+                        <li><a href="#domains">Domain Names</a></li>
+                        <li><a href="#vps">VPS Hosting</a></li>
+                        <li><a href="#dedicated">Dedicated Servers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="#status">System Status</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#sla">SLA</a></li>
+                        <li><a href="#acceptable-use">Acceptable Use</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 LeyteHost. All rights reserved. Premium hosting for ambitious businesses.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT - Pricing Toggle & Mobile Menu
+         ========================================== -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.getElementById('mainNav');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        }
+
+        // Pricing toggle functionality
+        const pricingToggle = document.getElementById('pricingToggle');
+        const monthlyLabel = document.querySelector('.monthly-label');
+        const annualLabel = document.querySelector('.annual-label');
+        const priceAmounts = document.querySelectorAll('.price-amount');
+        const annualSavings = document.querySelectorAll('.annual-savings');
+
+        let isAnnual = false;
+
+        function updatePricing() {
+            if (isAnnual) {
+                pricingToggle.classList.add('active');
+                monthlyLabel.classList.remove('active');
+                annualLabel.classList.add('active');
+
+                // Update prices
+                priceAmounts.forEach(price => {
+                    const annualPrice = price.getAttribute('data-annual');
+                    price.textContent = `$${annualPrice}`;
+                });
+
+                // Show annual savings
+                annualSavings.forEach(saving => {
+                    saving.style.display = 'block';
+                });
+
+            } else {
+                pricingToggle.classList.remove('active');
+                monthlyLabel.classList.add('active');
+                annualLabel.classList.remove('active');
+
+                // Update prices
+                priceAmounts.forEach(price => {
+                    const monthlyPrice = price.getAttribute('data-monthly');
+                    price.textContent = `$${monthlyPrice}`;
+                });
+
+                // Hide annual savings
+                annualSavings.forEach(saving => {
+                    saving.style.display = 'none';
+                });
+            }
+        }
+
+        pricingToggle.addEventListener('click', () => {
+            isAnnual = !isAnnual;
+            updatePricing();
+        });
+
+        monthlyLabel.addEventListener('click', () => {
+            if (isAnnual) {
+                isAnnual = false;
+                updatePricing();
+            }
+        });
+
+        annualLabel.addEventListener('click', () => {
+            if (!isAnnual) {
+                isAnnual = true;
+                updatePricing();
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#login' && href !== '#checkout-starter' && href !== '#checkout-pro' && href !== '#contact-sales' && href !== '#contact') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        mainNav.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
