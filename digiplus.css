@@ -1,0 +1,470 @@
+/* ==========================================
+   DIGIPLUS THEME STYLES
+   ========================================== */
+
+/* HERO SECTION - DigiPlus Style */
+.hero-digiplus {
+    background: var(--primary-bg);
+    padding: 8rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: rgba(110, 193, 228, 0.1);
+    color: var(--accent-cyan);
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.btn-lg {
+    padding: 1.2rem 2.8rem;
+    font-size: 1.05rem;
+}
+
+.hero-stats-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+    min-width: 140px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.hero-visual {
+    position: relative;
+}
+
+.hero-image-container {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.hero-main-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.float-badge {
+    position: absolute;
+    background: white;
+    color: var(--primary-bg);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: float-badge 3s ease-in-out infinite;
+}
+
+.badge-top {
+    top: 10%;
+    right: -10%;
+}
+
+.badge-bottom {
+    bottom: 15%;
+    left: -10%;
+}
+
+.badge-emoji {
+    font-size: 1.5rem;
+}
+
+@keyframes float-badge {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* FEATURES SECTION */
+.features-section {
+    background: var(--secondary-bg);
+    padding: 6rem 0;
+}
+
+.section-head {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-head h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.section-head p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.icon-card {
+    background: var(--primary-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.icon-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.icon-card-inner {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background: var(--accent-cyan);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-circle svg {
+    color: white;
+}
+
+.icon-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: white;
+}
+
+.icon-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* PRICING SECTION */
+.pricing-section {
+    background: var(--primary-bg);
+    padding: 6rem 0;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.price-card {
+    background: var(--secondary-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.price-card.featured {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 40px rgba(110, 193, 228, 0.2);
+}
+
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-cyan);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.price-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.price-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.price-amount {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.currency {
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+}
+
+.amount {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--accent-cyan);
+    line-height: 1;
+}
+
+.period {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.price-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.price-features li {
+    padding: 0.8rem 0;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.price-features li:last-child {
+    border-bottom: none;
+}
+
+.btn-block {
+    width: 100%;
+    text-align: center;
+}
+
+/* FAQ SECTION */
+.faq-section {
+    background: var(--tertiary-bg);
+    padding: 6rem 0;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    user-select: none;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 2rem 1.5rem;
+}
+
+.faq-answer p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.faq-item.active {
+    background: rgba(110, 193, 228, 0.05);
+    border-color: var(--accent-cyan);
+}
+
+/* CTA SECTION */
+.cta-section {
+    background: var(--secondary-bg);
+    padding: 6rem 0;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, rgba(110, 193, 228, 0.1), rgba(97, 206, 112, 0.08));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.cta-box h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.cta-box p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .hero-split {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .float-badge {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-digiplus {
+        padding: 4rem 0 3rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-lg {
+        width: 100%;
+    }
+
+    .hero-stats-row {
+        gap: 1rem;
+    }
+
+    .stat-item {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .icon-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .icon-card-inner {
+        flex-direction: column;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-question {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .cta-box {
+        padding: 3rem 2rem;
+    }
+}

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Web Hosting - Unleash Peak Digital Performance</title>
+
+    <!-- Google Fonts - DM Sans & Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         PAGE LOADER
+         ========================================== -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- ==========================================
+         PARTICLE BACKGROUND
+         ========================================== -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ==========================================
+         FLOATING GRADIENT ORBS
+         ========================================== -->
+    <div class="floating-orbs"></div>
+
+    <!-- ==========================================
+         STICKY HEADER & NAVIGATION
+         ========================================== -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">LEYTE<span style="color: #fff;">HOST</span></a>
+
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+            <nav class="nav" id="mainNav">
+                <a href="#home">Home</a>
+                <a href="pricing.html">Plans</a>
+                <a href="#features">Features</a>
+                <a href="#support">Support</a>
+            </nav>
+
+            <div class="nav-ctas">
+                <a href="#login" class="btn btn-ghost">Login</a>
+                <a href="pricing.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         HERO SECTION - DigiPlus Style
+         ========================================== -->
+    <section class="hero-digiplus section" id="home">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-label">Premium Web Hosting</div>
+                    <h1>Unleash Peak<br><span class="gradient-text">Digital Performance</span></h1>
+                    <p>Experience blazing-fast speeds, unbreakable security, and enterprise-grade hosting. Built for businesses that demand excellence.</p>
+
+                    <div class="hero-actions">
+                        <a href="pricing.html" class="btn btn-primary btn-large">Get Started</a>
+                        <a href="#features" class="btn btn-secondary btn-large">Learn More</a>
+                    </div>
+
+                    <!-- Stats Counters -->
+                    <div class="hero-stats">
+                        <div class="stat-box">
+                            <span class="stat-value" data-target="50000">0</span>
+                            <span class="stat-label">Active Sites</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-value" data-target="99">0</span>
+                            <span class="stat-label">% Uptime</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-value" data-target="24">0</span>
+                            <span class="stat-label">/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&q=80" alt="Server Infrastructure" class="hero-image">
+                        <div class="floating-badge badge-1">
+                            <span class="badge-icon">⚡</span>
+                            <span class="badge-text">99.9% Uptime</span>
+                        </div>
+                        <div class="floating-badge badge-2">
+                            <span class="badge-icon">🚀</span>
+                            <span class="badge-text">Lightning Fast</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FEATURES SECTION - DigiPlus Style
+         ========================================== -->
+    <section class="features-digiplus section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose LeyteHost?</h2>
+                <p>Experience enterprise-grade hosting with cutting-edge technology</p>
+            </div>
+
+            <div class="icon-boxes-grid">
+                <div class="icon-box reveal">
+                    <div class="icon-box-wrapper">
+                        <div class="icon-box-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline>
+                            </svg>
+                        </div>
+                        <div class="icon-box-content">
+                            <h3>Lightning Speed</h3>
+                            <p>NVMe SSD storage and advanced caching deliver load times under 200ms</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="icon-box reveal">
+                    <div class="icon-box-wrapper">
+                        <div class="icon-box-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <div class="icon-box-content">
+                            <h3>Military-Grade Security</h3>
+                            <p>Free SSL, DDoS protection, and real-time threat monitoring included</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="icon-box reveal">
+                    <div class="icon-box-wrapper">
+                        <div class="icon-box-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <div class="icon-box-content">
+                            <h3>99.99% Uptime</h3>
+                            <p>Enterprise infrastructure with redundant systems keeps you online</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="icon-box reveal">
+                    <div class="icon-box-wrapper">
+                        <div class="icon-box-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div class="icon-box-content">
+                            <h3>Infinite Scalability</h3>
+                            <p>Scale resources as you grow with zero downtime or migration</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="icon-box reveal">
+                    <div class="icon-box-wrapper">
+                        <div class="icon-box-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="icon-box-content">
+                            <h3>24/7 Expert Support</h3>
+                            <p>Round-the-clock assistance from hosting specialists</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="icon-box reveal">
+                    <div class="icon-box-wrapper">
+                        <div class="icon-box-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <div class="icon-box-content">
+                            <h3>Free Migration</h3>
+                            <p>We handle your website migration completely free of charge</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         STATISTICS SECTION
+         ========================================== -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="text-center mb-3">Trusted by Thousands Worldwide</h2>
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <span class="stat-number" data-target="50000">0</span>
+                    <span class="stat-label">Active Websites</span>
+                </div>
+                <div class="stat-card reveal">
+                    <span class="stat-number" data-target="99">0</span>
+                    <span class="stat-label">% Uptime</span>
+                </div>
+                <div class="stat-card reveal">
+                    <span class="stat-number" data-target="24">0</span>
+                    <span class="stat-label">/ 7 Support</span>
+                </div>
+                <div class="stat-card reveal">
+                    <span class="stat-number" data-target="150">0</span>
+                    <span class="stat-label">ms Load Time</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SERVICES SECTION
+         ========================================== -->
+    <section class="section section-white">
+        <div class="container">
+            <h2 class="text-center mb-3">Our Premium Services</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                Comprehensive hosting solutions designed to power your digital success.
+            </p>
+
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">🚀</div>
+                    <h3>Managed WordPress</h3>
+                    <p>Optimized WordPress hosting with automatic updates, caching, and expert support. Perfect for blogs, businesses, and e-commerce sites.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon">☁️</div>
+                    <h3>Cloud Hosting</h3>
+                    <p>Scalable cloud infrastructure with auto-scaling resources. Pay only for what you use with enterprise-grade reliability.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Dedicated Servers</h3>
+                    <p>Full control with dedicated hardware, root access, and custom configurations. Ideal for high-traffic applications.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon">📧</div>
+                    <h3>Email Hosting</h3>
+                    <p>Professional email with your domain, spam protection, and 99.9% uptime. Includes webmail and mobile sync.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon">🔐</div>
+                    <h3>SSL Certificates</h3>
+                    <p>Free and premium SSL certificates to secure your website. Automatic installation and renewal included.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon">💾</div>
+                    <h3>Backup Solutions</h3>
+                    <p>Automated daily backups with one-click restore. Keep your data safe with offsite storage and encryption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PROCESS TIMELINE SECTION
+         ========================================== -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="text-center mb-3">How We Get You Started</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                From signup to launch, we make it simple with our streamlined 4-step process.
+            </p>
+
+            <div class="process-timeline">
+                <div class="timeline-container">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-number">1</div>
+                        <h4>Choose Your Plan</h4>
+                        <p>Select the perfect hosting package for your needs with transparent pricing and no hidden fees.</p>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-number">2</div>
+                        <h4>Setup Your Account</h4>
+                        <p>Register your domain or transfer your existing one. Our team handles all the technical details.</p>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-number">3</div>
+                        <h4>Migrate Your Site</h4>
+                        <p>We'll migrate your existing website for free with zero downtime. Or start fresh with one-click installs.</p>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-number">4</div>
+                        <h4>Go Live & Grow</h4>
+                        <p>Launch your website with confidence. Our 24/7 support team is always ready to help you succeed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SHOWCASE IMAGE SECTION
+         ========================================== -->
+    <section class="showcase-section reveal section-dark">
+        <div class="showcase-image" style="background-image: url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&h=600&fit=crop&q=80');">
+            <div class="showcase-overlay">
+                <div class="container">
+                    <h2>Enterprise-Grade Data Centers</h2>
+                    <p>Our infrastructure is powered by state-of-the-art facilities across the globe, ensuring maximum performance and reliability for your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         DATACENTER LOCATIONS SECTION
+         ========================================== -->
+    <section class="section section-white">
+        <div class="container">
+            <h2 class="text-center mb-3">Global Network of Data Centers</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                Choose from strategically located data centers around the world for optimal performance and low latency.
+            </p>
+
+            <div class="datacenter-grid">
+                <div class="datacenter-card reveal">
+                    <div class="datacenter-icon">🌎</div>
+                    <h3>North America</h3>
+                    <ul class="datacenter-locations">
+                        <li>New York, USA</li>
+                        <li>Los Angeles, USA</li>
+                        <li>Toronto, Canada</li>
+                    </ul>
+                    <div class="datacenter-specs">
+                        <span class="spec-badge">Tier III</span>
+                        <span class="spec-badge">100 Gbps</span>
+                    </div>
+                </div>
+
+                <div class="datacenter-card reveal">
+                    <div class="datacenter-icon">🌍</div>
+                    <h3>Europe</h3>
+                    <ul class="datacenter-locations">
+                        <li>London, UK</li>
+                        <li>Frankfurt, Germany</li>
+                        <li>Amsterdam, Netherlands</li>
+                    </ul>
+                    <div class="datacenter-specs">
+                        <span class="spec-badge">Tier III</span>
+                        <span class="spec-badge">100 Gbps</span>
+                    </div>
+                </div>
+
+                <div class="datacenter-card reveal">
+                    <div class="datacenter-icon">🌏</div>
+                    <h3>Asia Pacific</h3>
+                    <ul class="datacenter-locations">
+                        <li>Singapore</li>
+                        <li>Tokyo, Japan</li>
+                        <li>Sydney, Australia</li>
+                    </ul>
+                    <div class="datacenter-specs">
+                        <span class="spec-badge">Tier III</span>
+                        <span class="spec-badge">100 Gbps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FEATURE OVERVIEW - STAGGERED LAYOUT
+         ========================================== -->
+    <section class="features section section-white" id="features">
+        <div class="container">
+            <h2 class="text-center mb-3">Advanced Technology Stack</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                Built on cutting-edge infrastructure to deliver unmatched performance and reliability.
+            </p>
+
+            <!-- Feature Row 1 -->
+            <div class="feature-row">
+                <div class="feature-text reveal-left">
+                    <h3>Enterprise-Class Infrastructure</h3>
+                    <p>Built on cutting-edge technology designed for high-performance applications and mission-critical workloads.</p>
+                    <ul>
+                        <li>NVMe SSD Storage for 10x faster disk I/O</li>
+                        <li>Global CDN with 200+ edge locations</li>
+                        <li>HTTP/3 and QUIC protocol support</li>
+                        <li>LiteSpeed Web Server technology</li>
+                    </ul>
+                </div>
+                <div class="feature-image image-overlay reveal-right" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&q=80');">
+                </div>
+            </div>
+
+            <!-- Feature Row 2 -->
+            <div class="feature-row">
+                <div class="feature-image image-overlay reveal-left" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop&q=80');">
+                </div>
+                <div class="feature-text reveal-right">
+                    <h3>Uncompromising Security</h3>
+                    <p>Multi-layered security architecture that protects your data and your customers' trust.</p>
+                    <ul>
+                        <li>Free wildcard SSL certificates</li>
+                        <li>Advanced DDoS mitigation (up to 10 Tbps)</li>
+                        <li>Automated daily backups with 30-day retention</li>
+                        <li>Web Application Firewall (WAF)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature Row 3 -->
+            <div class="feature-row">
+                <div class="feature-text reveal-left">
+                    <h3>Developer-Friendly Platform</h3>
+                    <p>Tools and integrations that developers love, from Git deployment to SSH access and beyond.</p>
+                    <ul>
+                        <li>One-click app installations (WordPress, Laravel, etc.)</li>
+                        <li>Full SSH and SFTP access</li>
+                        <li>Git integration and automated deployments</li>
+                        <li>Staging environments for safe testing</li>
+                    </ul>
+                </div>
+                <div class="feature-image image-overlay reveal-right" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&q=80');">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         TESTIMONIALS
+         ========================================== -->
+    <section class="testimonials section section-dark">
+        <div class="container">
+            <h2 class="text-center mb-3">Trusted by 50,000+ Businesses</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                See what our customers have to say about their experience with LeyteHost.
+            </p>
+
+            <div class="testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">
+                        "Migrating to LeyteHost was the best decision we made. Our page load times dropped by 60%, and we haven't had a single outage in 18 months."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&q=80" alt="Sarah Martinez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Martinez</h4>
+                            <p>CTO, TechFlow Inc.</p>
+                        </div>
+                    </div>
+                    <a href="#case-study-techflow" class="case-study-link">📄 Download Case Study</a>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">
+                        "The security features are enterprise-grade. Automated backups and DDoS protection give us peace of mind to focus on building our product."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80" alt="James Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>James Chen</h4>
+                            <p>Founder, CloudRetail</p>
+                        </div>
+                    </div>
+                    <a href="#case-study-cloudretail" class="case-study-link">📄 Download Case Study</a>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">
+                        "Outstanding support team. They helped us optimize our WordPress site and now we handle 100K daily visitors without breaking a sweat."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&q=80" alt="Emily Parker">
+                        </div>
+                        <div class="author-info">
+                            <h4>Emily Parker</h4>
+                            <p>Marketing Director, MediaHub</p>
+                        </div>
+                    </div>
+                    <a href="#case-study-mediahub" class="case-study-link">📄 Download Case Study</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SUPPORT OPTIONS SECTION
+         ========================================== -->
+    <section class="section section-white" id="support">
+        <div class="container">
+            <h2 class="text-center mb-3">24x7x365 Premium Support</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                Get help anytime, anywhere. Our expert support team is always ready to assist you.
+            </p>
+
+            <div class="support-grid">
+                <div class="support-card reveal">
+                    <div class="support-icon">💬</div>
+                    <h3>Live Chat</h3>
+                    <p>Instant support from our expert team. Average response time under 2 minutes.</p>
+                    <a href="#chat" class="support-link">Start Chat →</a>
+                </div>
+
+                <div class="support-card reveal">
+                    <div class="support-icon">🎫</div>
+                    <h3>Support Tickets</h3>
+                    <p>Submit detailed inquiries and track progress. Priority response for complex issues.</p>
+                    <a href="#tickets" class="support-link">Open Ticket →</a>
+                </div>
+
+                <div class="support-card reveal">
+                    <div class="support-icon">📚</div>
+                    <h3>Knowledge Base</h3>
+                    <p>Comprehensive guides, tutorials, and documentation. Self-service solutions 24/7.</p>
+                    <a href="#kb" class="support-link">Browse Articles →</a>
+                </div>
+
+                <div class="support-card reveal">
+                    <div class="support-icon">📞</div>
+                    <h3>Phone Support</h3>
+                    <p>Direct line to our experts for urgent issues. Available for Pro and Enterprise plans.</p>
+                    <a href="#phone" class="support-link">Call Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PRE-FOOTER CTA
+         ========================================== -->
+    <section class="cta-section section">
+        <div class="container">
+            <h2>Ready to Transform Your Web Presence?</h2>
+            <p>Join thousands of businesses already experiencing the LeyteHost advantage.</p>
+            <a href="pricing.html" class="btn btn-primary">View Pricing Plans</a>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company -->
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press Kit</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="pricing.html">Web Hosting</a></li>
+                        <li><a href="#domains">Domain Names</a></li>
+                        <li><a href="#vps">VPS Hosting</a></li>
+                        <li><a href="#dedicated">Dedicated Servers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="#status">System Status</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#sla">SLA</a></li>
+                        <li><a href="#acceptable-use">Acceptable Use</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 LeyteHost. All rights reserved. Premium hosting for ambitious businesses.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT - Mobile Menu Toggle & Smooth Scroll
+         ========================================== -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.getElementById('mainNav');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#login') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        mainNav.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- ==========================================
+         ANIMATIONS & EFFECTS
+         ========================================== -->
+    <script src="animations.js"></script>
+
+</body>
+</html>
