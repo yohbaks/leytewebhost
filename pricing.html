@@ -16,6 +16,23 @@
 <body>
 
     <!-- ==========================================
+         PAGE LOADER
+         ========================================== -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- ==========================================
+         PARTICLE BACKGROUND
+         ========================================== -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ==========================================
+         FLOATING GRADIENT ORBS
+         ========================================== -->
+    <div class="floating-orbs"></div>
+
+    <!-- ==========================================
          STICKY HEADER & NAVIGATION
          ========================================== -->
     <header class="header">
@@ -68,7 +85,7 @@
             <div class="pricing-cards">
 
                 <!-- STARTER PLAN -->
-                <div class="pricing-card">
+                <div class="pricing-card tilt-card reveal">
                     <div class="pricing-header">
                         <h3>Starter</h3>
                         <p>Perfect for personal projects and small sites</p>
@@ -101,7 +118,7 @@
                 </div>
 
                 <!-- PRO PLAN (RECOMMENDED) -->
-                <div class="pricing-card recommended">
+                <div class="pricing-card recommended tilt-card reveal">
                     <span class="recommended-badge">BEST VALUE</span>
 
                     <div class="pricing-header">
@@ -139,7 +156,7 @@
                 </div>
 
                 <!-- ENTERPRISE PLAN -->
-                <div class="pricing-card">
+                <div class="pricing-card tilt-card reveal">
                     <div class="pricing-header">
                         <h3>Enterprise</h3>
                         <p>Custom solutions for mission-critical applications</p>
@@ -618,6 +635,11 @@
             });
         });
     </script>
+
+    <!-- ==========================================
+         ANIMATIONS & EFFECTS
+         ========================================== -->
+    <script src="animations.js"></script>
 
 </body>
 </html>

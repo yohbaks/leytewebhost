@@ -16,6 +16,23 @@
 <body>
 
     <!-- ==========================================
+         PAGE LOADER
+         ========================================== -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- ==========================================
+         PARTICLE BACKGROUND
+         ========================================== -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ==========================================
+         FLOATING GRADIENT ORBS
+         ========================================== -->
+    <div class="floating-orbs"></div>
+
+    <!-- ==========================================
          STICKY HEADER & NAVIGATION
          ========================================== -->
     <header class="header">
@@ -43,8 +60,8 @@
          ========================================== -->
     <section class="hero section" id="home">
         <div class="container">
-            <h1>Unleash Peak Digital Performance.</h1>
-            <p>Experience blazing-fast speeds, unbreakable security, and 99.99% uptime. Built for businesses that demand excellence.</p>
+            <h1 class="typing-text">Unleash Peak Digital Performance.</h1>
+            <p class="reveal">Experience blazing-fast speeds, unbreakable security, and 99.99% uptime. Built for businesses that demand excellence.</p>
 
             <!-- Domain Search Bar -->
             <div class="domain-search">
@@ -68,31 +85,58 @@
 
             <div class="value-grid">
                 <!-- Speed -->
-                <div class="value-card">
+                <div class="value-card tilt-card reveal">
                     <div class="value-icon">⚡</div>
                     <h3>Lightning Speed</h3>
                     <p>NVMe SSD storage and advanced caching deliver load times under 200ms. Your visitors won't wait.</p>
                 </div>
 
                 <!-- Uptime -->
-                <div class="value-card">
+                <div class="value-card tilt-card reveal">
                     <div class="value-icon">🛡️</div>
                     <h3>99.99% Uptime</h3>
                     <p>Enterprise-grade infrastructure with redundant systems ensures your site is always online.</p>
                 </div>
 
                 <!-- Security -->
-                <div class="value-card">
+                <div class="value-card tilt-card reveal">
                     <div class="value-icon">🔒</div>
                     <h3>Military-Grade Security</h3>
                     <p>Free SSL, DDoS protection, automated backups, and real-time threat monitoring included.</p>
                 </div>
 
                 <!-- Scalability -->
-                <div class="value-card">
+                <div class="value-card tilt-card reveal">
                     <div class="value-icon">📈</div>
                     <h3>Infinite Scalability</h3>
                     <p>Seamlessly scale resources as your business grows. No downtime, no migration headaches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         STATISTICS SECTION
+         ========================================== -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="text-center mb-3">Trusted by Thousands Worldwide</h2>
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <span class="stat-number" data-target="50000">0</span>
+                    <span class="stat-label">Active Websites</span>
+                </div>
+                <div class="stat-card reveal">
+                    <span class="stat-number" data-target="99">0</span>
+                    <span class="stat-label">% Uptime</span>
+                </div>
+                <div class="stat-card reveal">
+                    <span class="stat-number" data-target="24">0</span>
+                    <span class="stat-label">/ 7 Support</span>
+                </div>
+                <div class="stat-card reveal">
+                    <span class="stat-number" data-target="150">0</span>
+                    <span class="stat-label">ms Load Time</span>
                 </div>
             </div>
         </div>
@@ -107,7 +151,7 @@
 
             <!-- Feature Row 1 -->
             <div class="feature-row">
-                <div class="feature-text">
+                <div class="feature-text reveal-left">
                     <h3>Enterprise-Class Infrastructure</h3>
                     <p>Built on cutting-edge technology designed for high-performance applications and mission-critical workloads.</p>
                     <ul>
@@ -117,17 +161,15 @@
                         <li>LiteSpeed Web Server technology</li>
                     </ul>
                 </div>
-                <div class="feature-image">
-                    <p>[High-tech server infrastructure visualization]</p>
+                <div class="feature-image image-overlay reveal-right" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&q=80');">
                 </div>
             </div>
 
             <!-- Feature Row 2 -->
             <div class="feature-row">
-                <div class="feature-image">
-                    <p>[Security dashboard interface mockup]</p>
+                <div class="feature-image image-overlay reveal-left" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop&q=80');">
                 </div>
-                <div class="feature-text">
+                <div class="feature-text reveal-right">
                     <h3>Uncompromising Security</h3>
                     <p>Multi-layered security architecture that protects your data and your customers' trust.</p>
                     <ul>
@@ -141,7 +183,7 @@
 
             <!-- Feature Row 3 -->
             <div class="feature-row">
-                <div class="feature-text">
+                <div class="feature-text reveal-left">
                     <h3>Developer-Friendly Platform</h3>
                     <p>Tools and integrations that developers love, from Git deployment to SSH access and beyond.</p>
                     <ul>
@@ -151,8 +193,7 @@
                         <li>Staging environments for safe testing</li>
                     </ul>
                 </div>
-                <div class="feature-image">
-                    <p>[Code editor / deployment pipeline visualization]</p>
+                <div class="feature-image image-overlay reveal-right" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&q=80');">
                 </div>
             </div>
         </div>
@@ -167,7 +208,7 @@
 
             <div class="testimonial-grid">
                 <!-- Testimonial 1 -->
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="testimonial-quote">
                         "Migrating to LeyteHost was the best decision we made. Our page load times dropped by 60%, and we haven't had a single outage in 18 months."
                     </div>
@@ -181,7 +222,7 @@
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="testimonial-quote">
                         "The security features are enterprise-grade. Automated backups and DDoS protection give us peace of mind to focus on building our product."
                     </div>
@@ -195,7 +236,7 @@
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="testimonial-quote">
                         "Outstanding support team. They helped us optimize our WordPress site and now we handle 100K daily visitors without breaking a sweat."
                     </div>
@@ -280,7 +321,7 @@
     </footer>
 
     <!-- ==========================================
-         JAVASCRIPT - Mobile Menu Toggle
+         JAVASCRIPT - Mobile Menu Toggle & Smooth Scroll
          ========================================== -->
     <script>
         // Mobile menu toggle
@@ -312,6 +353,11 @@
             });
         });
     </script>
+
+    <!-- ==========================================
+         ANIMATIONS & EFFECTS
+         ========================================== -->
+    <script src="animations.js"></script>
 
 </body>
 </html>
