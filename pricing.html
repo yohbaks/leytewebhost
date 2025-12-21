@@ -696,6 +696,94 @@
         }
 
         /* ============================================
+           BUSINESS FEATURES SECTION
+           ============================================ */
+
+        .business-features-section {
+            padding: 100px 0;
+            background: var(--background-secondary);
+        }
+
+        .business-features-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .business-features-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .business-features-header p {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .feature-category {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-category:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .feature-category-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .feature-category h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .feature-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-category ul li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .feature-category ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* ============================================
            FOOTER
            ============================================ */
 
@@ -824,6 +912,10 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .footer-content {
                 grid-template-columns: 1fr 1fr;
             }
@@ -839,6 +931,10 @@
             }
 
             .enterprise-features {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -928,8 +1024,9 @@
                         <li>Unlimited SSD Storage</li>
                         <li>Unlimited Bandwidth</li>
                         <li>Free SSL Certificate</li>
-                       
+
                         <li>24/7 Support</li>
+                        <li><a href="#business-features" style="color: var(--primary); text-decoration: none; font-weight: 600;">View All Features →</a></li>
                     </ul>
                     <button class="plan-cta plan-cta-secondary">Get Started</button>
                 </div>
@@ -948,7 +1045,7 @@
                         <li>Unlimited SSD Storage</li>
                         <li>Unlimited Bandwidth</li>
                         <li>Free SSL Certificate</li>
-                     
+
                         <li>Free CDN</li>
                          <li>Global Data Centers</li>
                          <li>Website Acceleration Suite</li>
@@ -956,6 +1053,7 @@
                          <li>Built-in Web Application Firewall</li>
 
                         <li>Priority Support</li>
+                        <li><a href="#business-features" style="color: var(--primary); text-decoration: none; font-weight: 600;">View All Features →</a></li>
                     </ul>
                 <a href="https://cp.leytewebhost.com/domain-required?p=280085-INF-lhr"
    class="plan-cta plan-cta-primary">
@@ -980,18 +1078,155 @@
                         <li>Website Acceleration Suite</li>
                         <li>Anti-DDoS protection & Built-in Web Application Firewall</li>
                         <li>Premium Support</li>
-                        <li><strong>CDN:</strong> Edge Caching, Website Optimisation Suite, Block Visitors, CDN Statistics, Security Headers</li>
-                        <li><strong>Web Files:</strong> Select All, File Manager, FTP Accounts, Backup/Restore, Website Builder, File Permission, Git Version Control</li>
-                        <li><strong>Email:</strong> Select All, Set Notification Threshold, Catch-All Forwarders, Junk Mail Filters, Webmail, Email Summary, Email Migration, Domainkeys (DKIM), DMARC Wizard</li>
-                        <li><strong>Web Tools:</strong> Select All, PHPMyAdmin, Remote MySQL Access, Change PHP Version, PHP Configuration, Scheduled Tasks, Web Redirects, Sitemap Generator, Custom Errors, Auto Diagnostics, Maintenance Mode</li>
-                        <li><strong>Domain Names:</strong> Change Nameservers, Domain Privacy, Manage Contacts, Manage DNS, DNSSEC, Transfer Away, WHOIS, Custom Doc Root (All Domains), Custom Doc Root (Primary Domain), Make Primary Domain</li>
-                        <li><strong>Security:</strong> SSH Access, Hotlink Protection, Free SSL, Allow External SSL, Password Protection, Directory Indexing, Malware Scan, Malware Report, Auto activate free SSL, Allow Force SSL Redirect</li>
-                        <li><strong>Logs and Statistics:</strong> AWStats, Webalizer, Access/Error Logs, Mail Logs</li>
-                        <li><strong>Side bar:</strong> Account Information, Temporary URL, Primary FTP Lock, Usage Information, Nameservers Setup, View Bandwidth Stats, View Disk Usage Stats</li>
-                        <li><strong>General Information:</strong> Google Translate</li>
+                        <li><a href="#business-features" style="color: var(--primary); text-decoration: none; font-weight: 600;">View All Features →</a></li>
                     </ul>
                     <button class="plan-cta plan-cta-secondary">Get Started</button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Features Section -->
+    <section class="business-features-section" id="business-features">
+        <div class="container">
+            <div class="business-features-header">
+                <h2>🚀 Complete Feature List</h2>
+                <p>Everything you need to run a professional website - Available across all our hosting packages</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-category">
+                    <div class="feature-category-icon">🚀</div>
+                    <h3>CDN</h3>
+                    <ul>
+                        <li>Edge Caching</li>
+                        <li>Website Optimisation Suite</li>
+                        <li>Block Visitors</li>
+                        <li>CDN Statistics</li>
+                        <li>Security Headers</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <div class="feature-category-icon">📁</div>
+                    <h3>Web Files</h3>
+                    <ul>
+                        <li>Select All</li>
+                        <li>File Manager</li>
+                        <li>FTP Accounts</li>
+                        <li>Backup/Restore</li>
+                        <li>Website Builder</li>
+                        <li>File Permission</li>
+                        <li>Git Version Control</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <div class="feature-category-icon">📧</div>
+                    <h3>Email</h3>
+                    <ul>
+                        <li>Select All</li>
+                        <li>Set Notification Threshold</li>
+                        <li>Catch-All Forwarders</li>
+                        <li>Junk Mail Filters</li>
+                        <li>Webmail</li>
+                        <li>Email Summary</li>
+                        <li>Email Migration</li>
+                        <li>Domainkeys (DKIM)</li>
+                        <li>DMARC Wizard</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <div class="feature-category-icon">🔧</div>
+                    <h3>Web Tools</h3>
+                    <ul>
+                        <li>Select All</li>
+                        <li>PHPMyAdmin</li>
+                        <li>Remote MySQL Access</li>
+                        <li>Change PHP Version</li>
+                        <li>PHP Configuration</li>
+                        <li>Scheduled Tasks</li>
+                        <li>Web Redirects</li>
+                        <li>Sitemap Generator</li>
+                        <li>Custom Errors</li>
+                        <li>Auto Diagnostics</li>
+                        <li>Maintenance Mode</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <div class="feature-category-icon">🌐</div>
+                    <h3>Domain Names</h3>
+                    <ul>
+                        <li>Change Nameservers</li>
+                        <li>Domain Privacy</li>
+                        <li>Manage Contacts</li>
+                        <li>Manage DNS</li>
+                        <li>DNSSEC</li>
+                        <li>Transfer Away</li>
+                        <li>WHOIS</li>
+                        <li>Custom Doc Root (All Domains)</li>
+                        <li>Custom Doc Root (Primary Domain)</li>
+                        <li>Make Primary Domain</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <div class="feature-category-icon">🔐</div>
+                    <h3>Security</h3>
+                    <ul>
+                        <li>SSH Access</li>
+                        <li>Hotlink Protection</li>
+                        <li>Free SSL</li>
+                        <li>Allow External SSL</li>
+                        <li>Password Protection</li>
+                        <li>Directory Indexing</li>
+                        <li>Malware Scan</li>
+                        <li>Malware Report</li>
+                        <li>Auto activate free SSL</li>
+                        <li>Allow Force SSL Redirect</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <div class="feature-category-icon">📊</div>
+                    <h3>Logs and Statistics</h3>
+                    <ul>
+                        <li>AWStats</li>
+                        <li>Webalizer</li>
+                        <li>Access/Error Logs</li>
+                        <li>Mail Logs</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <div class="feature-category-icon">📋</div>
+                    <h3>Side Bar</h3>
+                    <ul>
+                        <li>Account Information</li>
+                        <li>Temporary URL</li>
+                        <li>Primary FTP Lock</li>
+                        <li>Usage Information</li>
+                        <li>Nameservers Setup</li>
+                        <li>View Bandwidth Stats</li>
+                        <li>View Disk Usage Stats</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <div class="feature-category-icon">🌍</div>
+                    <h3>General Information</h3>
+                    <ul>
+                        <li>Google Translate</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="#" class="plan-cta plan-cta-primary" style="display: inline-block; width: auto; padding: 18px 48px;">
+                    Choose Your Perfect Plan
+                </a>
             </div>
         </div>
     </section>
@@ -1228,11 +1463,11 @@
         billingToggle.addEventListener('click', () => {
             billingToggle.classList.toggle('active');
             const isAnnual = billingToggle.classList.contains('active');
-            
+
             toggleLabels.forEach((label, index) => {
                 label.classList.toggle('active', index === (isAnnual ? 1 : 0));
             });
-            
+
             prices.forEach((priceEl, index) => {
                 const price = isAnnual ? annualPrices[index] : monthlyPrices[index];
                 priceEl.innerHTML = `<sup>$</sup>${price}`;
