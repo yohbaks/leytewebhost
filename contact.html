@@ -253,7 +253,11 @@
                         <h2>Send Us a Message</h2>
                         <p>Fill out the form below and we'll get back to you as soon as possible.</p>
                     </div>
-                    <form action="#" method="POST">
+
+                    <!-- Message Alert -->
+                    <div id="formMessage" style="display: none; padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 14px; font-weight: 600;"></div>
+
+                    <form id="contactForm" action="send_email.php" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name</label>
@@ -289,7 +293,7 @@
                             <label for="message">Your Message</label>
                             <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
                         </div>
-                        <button type="submit" class="btn-submit">Send Message →</button>
+                        <button type="submit" class="btn-submit" id="submitBtn">Send Message →</button>
                     </form>
                 </div>
 

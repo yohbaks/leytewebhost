@@ -154,3 +154,98 @@ fadeElements.forEach(element => {
     element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     fadeObserver.observe(element);
 });
+
+// Contact Form Submission Handler
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+const submitBtn = document.getElementById('submitBtn');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Disable submit button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        // Hide previous messages
+        formMessage.style.display = 'none';
+
+        // Collect form data
+        const formData = new FormData(contactForm);
+
+        try {
+            // Send form data to PHP handler
+            const response = await fetch('send_email.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+
+            // Display message
+            formMessage.style.display = 'block';
+            formMessage.textContent = result.message;
+
+            if (result.success) {
+                // Success styling
+                formMessage.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                formMessage.style.color = '#fff';
+                formMessage.style.border = '1px solid #10b981';
+
+                // Reset form
+                contactForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            } else {
+                // Error styling
+                formMessage.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+                formMessage.style.color = '#fff';
+                formMessage.style.border = '1px solid #ef4444';
+            }
+        } catch (error) {
+            // Network error
+            formMessage.style.display = 'block';
+            formMessage.textContent = 'Network error. Please check your connection and try again.';
+            formMessage.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+            formMessage.style.color = '#fff';
+            formMessage.style.border = '1px solid #ef4444';
+        } finally {
+            // Re-enable submit button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message →';
+        }
+    });
+
+    // Add real-time validation feedback
+    const inputs = contactForm.querySelectorAll('input[required], select[required], textarea[required]');
+    inputs.forEach(input => {
+        input.addEventListener('blur', () => {
+            if (input.value.trim() === '') {
+                input.style.borderColor = '#ef4444';
+            } else {
+                input.style.borderColor = '#10b981';
+            }
+        });
+
+        input.addEventListener('focus', () => {
+            input.style.borderColor = '#2563eb';
+        });
+    });
+
+    // Email validation
+    const emailInput = document.getElementById('email');
+    if (emailInput) {
+        emailInput.addEventListener('blur', () => {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                emailInput.style.borderColor = '#ef4444';
+            } else {
+                emailInput.style.borderColor = '#10b981';
+            }
+        });
+    }
+}
