@@ -180,6 +180,48 @@ body {
     animation: fadeInUp 0.6s ease-out 0.3s backwards;
 }
 
+.btn-primary {
+    background: var(--primary);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid var(--primary);
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.btn-large {
+    padding: 14px 28px;
+    font-size: 15px;
+}
 .btn-primary svg,
 .btn-secondary svg {
     margin-left: 8px;
