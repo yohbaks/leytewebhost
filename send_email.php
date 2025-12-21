@@ -151,15 +151,11 @@ Received: " . date('F j, Y, g:i a') . "
 // Check if PHPMailer is available
 if (file_exists('PHPMailer/PHPMailer.php')) {
     // Use PHPMailer
-    require 'PHPMailer/PHPMailer.php';
-    require 'PHPMailer/SMTP.php';
-    require 'PHPMailer/Exception.php';
+    require_once 'PHPMailer/PHPMailer.php';
+    require_once 'PHPMailer/SMTP.php';
+    require_once 'PHPMailer/Exception.php';
 
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
-
-    $mail = new PHPMailer(true);
+    $mail = new PHPMailer\PHPMailer\PHPMailer(true);
 
     try {
         // Server settings
@@ -168,7 +164,7 @@ if (file_exists('PHPMailer/PHPMailer.php')) {
         $mail->SMTPAuth = true;
         $mail->Username = 'admin@leytewebhost.com';
         $mail->Password = 'g7+Mt9K[xs;p';
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port = 465;
 
         // Recipients
