@@ -296,6 +296,25 @@
             flex-shrink: 0;
         }
 
+        .plan-features .feature-extra {
+            display: none;
+        }
+
+        .plan-features.expanded .feature-extra {
+            display: flex;
+        }
+
+        .feature-toggle {
+            margin: 4px 0 16px;
+            background: var(--background-secondary);
+            color: var(--text-primary);
+            border: 1px dashed var(--border);
+        }
+
+        .feature-toggle:hover {
+            background: #e2e8f0;
+        }
+
         .plan-cta {
             display: block;
             width: 100%;
@@ -910,20 +929,27 @@
                         <span class="plan-price-amount"><sup>$</sup>15.99</span>
                     </div>
                     <div class="plan-price-period">/month (billed annually)</div>
-                    <ul class="plan-features">
+                    <ul class="plan-features" id="business-feature-list">
                         <li>Unlimited Websites</li>
-                          <li>Unlimited email accounts</li>
+                        <li>Unlimited email accounts</li>
                         <li>Unlimited SSD Storage</li>
                         <li>Unlimited Bandwidth</li>
                         <li>Free SSL Certificate</li>
-                        
-           <li>Free CDN</li>
-                         <li>Global Data Centers</li>
-                         <li>Website Acceleration Suite</li>
-                         <li>Anti-DDoS protection</li>
-                         <li>Built-in Web Application Firewall</li>
+                        <li>Free CDN with global data centers</li>
+                        <li>Website Acceleration Suite</li>
+                        <li>Anti-DDoS protection & Built-in Web Application Firewall</li>
                         <li>Premium Support</li>
+                        <li class="feature-extra"><strong>CDN:</strong> Edge Caching, Website Optimisation Suite, Block Visitors, CDN Statistics, Security Headers</li>
+                        <li class="feature-extra"><strong>Web Files:</strong> Select All, File Manager, FTP Accounts, Backup/Restore, Website Builder, File Permission, Git Version Control</li>
+                        <li class="feature-extra"><strong>Email:</strong> Select All, Set Notification Threshold, Catch-All Forwarders, Junk Mail Filters, Webmail, Email Summary, Email Migration, Domainkeys (DKIM), DMARC Wizard</li>
+                        <li class="feature-extra"><strong>Web Tools:</strong> Select All, PHPMyAdmin, Remote MySQL Access, Change PHP Version, PHP Configuration, Scheduled Tasks, Web Redirects, Sitemap Generator, Custom Errors, Auto Diagnostics, Maintenance Mode</li>
+                        <li class="feature-extra"><strong>Domain Names:</strong> Change Nameservers, Domain Privacy, Manage Contacts, Manage DNS, DNSSEC, Transfer Away, WHOIS, Custom Doc Root (All Domains), Custom Doc Root (Primary Domain), Make Primary Domain</li>
+                        <li class="feature-extra"><strong>Security:</strong> SSH Access, Hotlink Protection, Free SSL, Allow External SSL, Password Protection, Directory Indexing, Malware Scan, Malware Report, Auto activate free SSL, Allow Force SSL Redirect</li>
+                        <li class="feature-extra"><strong>Logs and Statistics:</strong> AWStats, Webalizer, Access/Error Logs, Mail Logs</li>
+                        <li class="feature-extra"><strong>Side bar:</strong> Account Information, Temporary URL, Primary FTP Lock, Usage Information, Nameservers Setup, View Bandwidth Stats, View Disk Usage Stats</li>
+                        <li class="feature-extra"><strong>General Information:</strong> Google Translate</li>
                     </ul>
+                    <button class="plan-cta feature-toggle" data-toggle-target="#business-feature-list">View all features</button>
                     <button class="plan-cta plan-cta-secondary">Get Started</button>
                 </div>
             </div>

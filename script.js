@@ -154,3 +154,14 @@ fadeElements.forEach(element => {
     element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     fadeObserver.observe(element);
 });
+
+// Toggle Business plan full feature list
+const featureToggleBtn = document.querySelector('[data-toggle-target="#business-feature-list"]');
+const businessFeatureList = document.querySelector('#business-feature-list');
+
+if (featureToggleBtn && businessFeatureList) {
+    featureToggleBtn.addEventListener('click', () => {
+        const expanded = businessFeatureList.classList.toggle('expanded');
+        featureToggleBtn.textContent = expanded ? 'Hide features' : 'View all features';
+    });
+}
