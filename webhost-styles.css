@@ -62,7 +62,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 0;
+    padding: 20px 0;
 }
 
 .nav-logo {
@@ -183,6 +183,57 @@ body {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Dark Navigation Theme */
+.navbar.navbar-dark {
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar.navbar-dark .nav-logo {
+    color: #ffffff;
+}
+
+.navbar.navbar-dark .logo-symbol {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.navbar.navbar-dark .nav-link {
+    color: #94a3b8;
+}
+
+.navbar.navbar-dark .nav-link:hover,
+.navbar.navbar-dark .nav-link.active {
+    color: #06b6d4;
+}
+
+.navbar.navbar-dark .nav-link.active::after {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+}
+
+.navbar.navbar-dark .nav-btn-login {
+    color: #94a3b8;
+}
+
+.navbar.navbar-dark .nav-btn-login:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.navbar.navbar-dark .nav-btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+}
+
+.navbar.navbar-dark .nav-btn-primary:hover {
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+}
+
+.navbar.navbar-dark .hamburger span {
+    background: #ffffff;
 }
 
 /* ============================================
