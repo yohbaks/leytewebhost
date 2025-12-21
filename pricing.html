@@ -989,15 +989,6 @@
                 <div class="hero-badge">💰 Simple, Transparent Pricing</div>
                 <h1>Find the Perfect Plan<br>for <span>Your Needs</span></h1>
                 <p>No hidden fees, no surprises. Choose the plan that works best for you and scale as you grow.</p>
-                
-                <div class="billing-toggle">
-                    <span class="active">Monthly</span>
-                    <div class="toggle-switch" id="billingToggle">
-                        <div class="toggle-slider"></div>
-                    </div>
-                    <span>Annual</span>
-                    <span class="save-badge">Save 20%</span>
-                </div>
             </div>
         </div>
     </section>
@@ -1016,9 +1007,9 @@
                     <h3 class="plan-name">Starter</h3>
                     <p class="plan-description">Great for personal websites</p>
                     <div class="plan-price">
-                        <span class="plan-price-amount"><sup>$</sup>9.99</span>
+                        <span class="plan-price-amount"><sup>$</sup>7.99</span>
                     </div>
-                    <div class="plan-price-period">/month</div>
+                    <div class="plan-price-period">/month (billed annually)</div>
                     <ul class="plan-features">
                         <li>1 Website</li>
                         <li>Unlimited SSD Storage</li>
@@ -1037,9 +1028,9 @@
                     <h3 class="plan-name">Professional</h3>
                     <p class="plan-description">For growing businesses</p>
                     <div class="plan-price">
-                        <span class="plan-price-amount"><sup>$</sup>15.99</span>
+                        <span class="plan-price-amount"><sup>$</sup>12.79</span>
                     </div>
-                    <div class="plan-price-period">/month</div>
+                    <div class="plan-price-period">/month (billed annually)</div>
                     <ul class="plan-features">
                         <li>5 Websites</li>
                         <li>Unlimited SSD Storage</li>
@@ -1063,9 +1054,9 @@
                     <h3 class="plan-name">Business</h3>
                     <p class="plan-description">For high-traffic sites</p>
                     <div class="plan-price">
-                        <span class="plan-price-amount"><sup>$</sup>19.99</span>
+                        <span class="plan-price-amount"><sup>$</sup>15.99</span>
                     </div>
-                    <div class="plan-price-period">/month</div>
+                    <div class="plan-price-period">/month (billed annually)</div>
                     <ul class="plan-features">
                         <li>Unlimited Websites</li>
                         <li>Unlimited SSD Storage</li>
@@ -1242,9 +1233,9 @@
                     <h3 class="plan-name">VPS Starter</h3>
                     <p class="plan-description">Entry-level virtual server</p>
                     <div class="plan-price">
-                        <span class="plan-price-amount"><sup>$</sup>39.99</span>
+                        <span class="plan-price-amount"><sup>$</sup>31.99</span>
                     </div>
-                    <div class="plan-price-period">/month</div>
+                    <div class="plan-price-period">/month (billed annually)</div>
                     <ul class="plan-features">
                         <li>2 vCPU Cores</li>
                         <li>4 GB RAM</li>
@@ -1262,9 +1253,9 @@
                     <h3 class="plan-name">VPS Pro</h3>
                     <p class="plan-description">Enhanced resources</p>
                     <div class="plan-price">
-                        <span class="plan-price-amount"><sup>$</sup>79.99</span>
+                        <span class="plan-price-amount"><sup>$</sup>63.99</span>
                     </div>
-                    <div class="plan-price-period">/month</div>
+                    <div class="plan-price-period">/month (billed annually)</div>
                     <ul class="plan-features">
                         <li>4 vCPU Cores</li>
                         <li>8 GB RAM</li>
@@ -1283,9 +1274,9 @@
                     <h3 class="plan-name">VPS Elite</h3>
                     <p class="plan-description">Maximum power</p>
                     <div class="plan-price">
-                        <span class="plan-price-amount"><sup>$</sup>159.99</span>
+                        <span class="plan-price-amount"><sup>$</sup>127.99</span>
                     </div>
-                    <div class="plan-price-period">/month</div>
+                    <div class="plan-price-period">/month (billed annually)</div>
                     <ul class="plan-features">
                         <li>8 vCPU Cores</li>
                         <li>16 GB RAM</li>
@@ -1448,28 +1439,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Billing toggle functionality
-        const billingToggle = document.getElementById('billingToggle');
-        const prices = document.querySelectorAll('.plan-price-amount');
-        const toggleLabels = document.querySelectorAll('.billing-toggle > span:not(.save-badge)');
-        
-        const monthlyPrices = ['9.99', '15.99', '19.99', '39.99', '79.99', '159.99'];
-        const annualPrices = ['7.99', '12.79', '15.99', '31.99', '63.99', '127.99'];
-        
-        billingToggle.addEventListener('click', () => {
-            billingToggle.classList.toggle('active');
-            const isAnnual = billingToggle.classList.contains('active');
-
-            toggleLabels.forEach((label, index) => {
-                label.classList.toggle('active', index === (isAnnual ? 1 : 0));
-            });
-
-            prices.forEach((priceEl, index) => {
-                const price = isAnnual ? annualPrices[index] : monthlyPrices[index];
-                priceEl.innerHTML = `<sup>$</sup>${price}`;
-            });
-        });
-    </script>
 </body>
 </html>
