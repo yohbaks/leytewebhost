@@ -696,6 +696,65 @@
         }
 
         /* ============================================
+           TOGGLE FEATURES BUTTON
+           ============================================ */
+
+        .toggle-features-btn {
+            width: 100%;
+            padding: 12px 16px;
+            margin: 16px 0;
+            background: var(--background-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .toggle-features-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        .toggle-features-btn .arrow {
+            transition: transform 0.3s ease;
+            font-size: 12px;
+        }
+
+        .toggle-features-btn.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-features {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .collapsible-features.active {
+            max-height: 2000px;
+            transition: max-height 0.6s ease-in;
+        }
+
+        .collapsible-features li {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .collapsible-features.active li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
            FOOTER
            ============================================ */
 
@@ -980,6 +1039,14 @@
                         <li>Website Acceleration Suite</li>
                         <li>Anti-DDoS protection & Built-in Web Application Firewall</li>
                         <li>Premium Support</li>
+                    </ul>
+
+                    <button class="toggle-features-btn" id="toggleBusinessFeatures">
+                        <span>View All Features</span>
+                        <span class="arrow">▼</span>
+                    </button>
+
+                    <ul class="plan-features collapsible-features" id="businessFeatures">
                         <li><strong>CDN:</strong> Edge Caching, Website Optimisation Suite, Block Visitors, CDN Statistics, Security Headers</li>
                         <li><strong>Web Files:</strong> Select All, File Manager, FTP Accounts, Backup/Restore, Website Builder, File Permission, Git Version Control</li>
                         <li><strong>Email:</strong> Select All, Set Notification Threshold, Catch-All Forwarders, Junk Mail Filters, Webmail, Email Summary, Email Migration, Domainkeys (DKIM), DMARC Wizard</li>
@@ -990,6 +1057,7 @@
                         <li><strong>Side bar:</strong> Account Information, Temporary URL, Primary FTP Lock, Usage Information, Nameservers Setup, View Bandwidth Stats, View Disk Usage Stats</li>
                         <li><strong>General Information:</strong> Google Translate</li>
                     </ul>
+
                     <button class="plan-cta plan-cta-secondary">Get Started</button>
                 </div>
             </div>
@@ -1228,16 +1296,35 @@
         billingToggle.addEventListener('click', () => {
             billingToggle.classList.toggle('active');
             const isAnnual = billingToggle.classList.contains('active');
-            
+
             toggleLabels.forEach((label, index) => {
                 label.classList.toggle('active', index === (isAnnual ? 1 : 0));
             });
-            
+
             prices.forEach((priceEl, index) => {
                 const price = isAnnual ? annualPrices[index] : monthlyPrices[index];
                 priceEl.innerHTML = `<sup>$</sup>${price}`;
             });
         });
+
+        // Business package features toggle
+        const toggleBtn = document.getElementById('toggleBusinessFeatures');
+        const featuresSection = document.getElementById('businessFeatures');
+
+        if (toggleBtn && featuresSection) {
+            toggleBtn.addEventListener('click', () => {
+                toggleBtn.classList.toggle('active');
+                featuresSection.classList.toggle('active');
+
+                // Update button text
+                const buttonText = toggleBtn.querySelector('span:first-child');
+                if (featuresSection.classList.contains('active')) {
+                    buttonText.textContent = 'Hide All Features';
+                } else {
+                    buttonText.textContent = 'View All Features';
+                }
+            });
+        }
     </script>
 </body>
 </html>
