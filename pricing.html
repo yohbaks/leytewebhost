@@ -989,6 +989,12 @@
                 <div class="hero-badge">💰 Simple, Transparent Pricing</div>
                 <h1>Find the Perfect Plan<br>for <span>Your Needs</span></h1>
                 <p>No hidden fees, no surprises. Choose the plan that works best for you and scale as you grow.</p>
+                
+                <div class="billing-toggle">
+                    <span class="active">Annual Package </span>
+                 
+                    <span class="save-badge">Save 20%</span>
+                </div>
             </div>
         </div>
     </section>
@@ -1009,14 +1015,20 @@
                     <div class="plan-price">
                         <span class="plan-price-amount"><sup>$</sup>7.99</span>
                     </div>
-                    <div class="plan-price-period">/month (billed annually)</div>
+                    <div class="plan-price-period">/month</div>
                     <ul class="plan-features">
                         <li>1 Website</li>
-                        <li>Unlimited SSD Storage</li>
+                        <li>1 Email Account</li>
+                        <li>10GB SSD Storage</li>
                         <li>Unlimited Bandwidth</li>
                         <li>Free SSL Certificate</li>
+                         <li>Free CDN</li>
+                         <li>Global Data Centers</li>
+                         <li>Website Acceleration Suite</li>
+                         <li>Anti-DDoS protection</li>
+                         <li>Built-in Web Application Firewall</li>
 
-                        <li>24/7 Support</li>
+                        <li>Priority Support</li>
                         <li><a href="#business-features" style="color: var(--primary); text-decoration: none; font-weight: 600;">View All Features →</a></li>
                     </ul>
                     <a href="https://cp.leytewebhost.com/basket-direct/eyJtIjoxMiwiYyI6InN0YWNrX3VzZXJfcGFja2FnZV9hbGxvd2FuY2U6MjgwMDgzLUlORi1saHIifQ==" class="plan-cta plan-cta-secondary">Get Started</a>
@@ -1028,11 +1040,12 @@
                     <h3 class="plan-name">Professional</h3>
                     <p class="plan-description">For growing businesses</p>
                     <div class="plan-price">
-                        <span class="plan-price-amount"><sup>$</sup>12.79</span>
+                        <span class="plan-price-amount"><sup>$</sup>13.99</span>
                     </div>
-                    <div class="plan-price-period">/month (billed annually)</div>
+                    <div class="plan-price-period">/month</div>
                     <ul class="plan-features">
-                        <li>5 Websites</li>
+                        <li>5 Websites</li> 
+                        <li>10 Email Accounts</li> 
                         <li>Unlimited SSD Storage</li>
                         <li>Unlimited Bandwidth</li>
                         <li>Free SSL Certificate</li>
@@ -1056,7 +1069,7 @@
                     <div class="plan-price">
                         <span class="plan-price-amount"><sup>$</sup>15.99</span>
                     </div>
-                    <div class="plan-price-period">/month (billed annually)</div>
+                    <div class="plan-price-period">/month</div>
                     <ul class="plan-features">
                         <li>Unlimited Websites</li>
                         <li>Unlimited SSD Storage</li>
@@ -1099,7 +1112,7 @@
                     <div class="feature-category-icon">📁</div>
                     <h3>Web Files</h3>
                     <ul>
-                        <li>Select All</li>
+                       
                         <li>File Manager</li>
                         <li>FTP Accounts</li>
                         <li>Backup/Restore</li>
@@ -1113,7 +1126,7 @@
                     <div class="feature-category-icon">📧</div>
                     <h3>Email</h3>
                     <ul>
-                        <li>Select All</li>
+                       
                         <li>Set Notification Threshold</li>
                         <li>Catch-All Forwarders</li>
                         <li>Junk Mail Filters</li>
@@ -1129,7 +1142,7 @@
                     <div class="feature-category-icon">🔧</div>
                     <h3>Web Tools</h3>
                     <ul>
-                        <li>Select All</li>
+                      
                         <li>PHPMyAdmin</li>
                         <li>Remote MySQL Access</li>
                         <li>Change PHP Version</li>
@@ -1233,9 +1246,9 @@
                     <h3 class="plan-name">VPS Starter</h3>
                     <p class="plan-description">Entry-level virtual server</p>
                     <div class="plan-price">
-                        <span class="plan-price-amount"><sup>$</sup>31.99</span>
+                        <span class="plan-price-amount"><sup>$</sup>39.99</span>
                     </div>
-                    <div class="plan-price-period">/month (billed annually)</div>
+                    <div class="plan-price-period">/month</div>
                     <ul class="plan-features">
                         <li>2 vCPU Cores</li>
                         <li>4 GB RAM</li>
@@ -1253,9 +1266,9 @@
                     <h3 class="plan-name">VPS Pro</h3>
                     <p class="plan-description">Enhanced resources</p>
                     <div class="plan-price">
-                        <span class="plan-price-amount"><sup>$</sup>63.99</span>
+                        <span class="plan-price-amount"><sup>$</sup>79.99</span>
                     </div>
-                    <div class="plan-price-period">/month (billed annually)</div>
+                    <div class="plan-price-period">/month</div>
                     <ul class="plan-features">
                         <li>4 vCPU Cores</li>
                         <li>8 GB RAM</li>
@@ -1274,9 +1287,9 @@
                     <h3 class="plan-name">VPS Elite</h3>
                     <p class="plan-description">Maximum power</p>
                     <div class="plan-price">
-                        <span class="plan-price-amount"><sup>$</sup>127.99</span>
+                        <span class="plan-price-amount"><sup>$</sup>159.99</span>
                     </div>
-                    <div class="plan-price-period">/month (billed annually)</div>
+                    <div class="plan-price-period">/month</div>
                     <ul class="plan-features">
                         <li>8 vCPU Cores</li>
                         <li>16 GB RAM</li>
@@ -1439,5 +1452,28 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Billing toggle functionality
+        const billingToggle = document.getElementById('billingToggle');
+        const prices = document.querySelectorAll('.plan-price-amount');
+        const toggleLabels = document.querySelectorAll('.billing-toggle > span:not(.save-badge)');
+        
+        const monthlyPrices = ['9.99', '15.99', '19.99', '39.99', '79.99', '159.99'];
+        const annualPrices = ['7.99', '12.79', '15.99', '31.99', '63.99', '127.99'];
+        
+        billingToggle.addEventListener('click', () => {
+            billingToggle.classList.toggle('active');
+            const isAnnual = billingToggle.classList.contains('active');
+
+            toggleLabels.forEach((label, index) => {
+                label.classList.toggle('active', index === (isAnnual ? 1 : 0));
+            });
+
+            prices.forEach((priceEl, index) => {
+                const price = isAnnual ? annualPrices[index] : monthlyPrices[index];
+                priceEl.innerHTML = `<sup>$</sup>${price}`;
+            });
+        });
+    </script>
 </body>
 </html>
