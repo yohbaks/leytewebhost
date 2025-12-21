@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Leytewebhost | Hosting Solutions for Every Need</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --background: #ffffff;
+            --background-secondary: #f8fafc;
+            --background-dark: #0f172a;
+            --border: #e2e8f0;
+            --gradient-1: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+            --gradient-3: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--background); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+        .services-hero { position: relative; padding: 160px 0 100px; background: var(--gradient-3); overflow: hidden; text-align: center; }
+        .services-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 20%, rgba(37, 99, 235, 0.3) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(6, 182, 212, 0.2) 0%, transparent 50%); pointer-events: none; }
+        .services-hero::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none; }
+        .services-hero-content { position: relative; z-index: 10; max-width: 800px; margin: 0 auto; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50px; padding: 8px 20px; margin-bottom: 28px; font-size: 13px; font-weight: 600; color: #06b6d4; }
+        .services-hero h1 { font-size: clamp(42px, 5vw, 64px); font-weight: 900; color: #fff; margin-bottom: 20px; letter-spacing: -0.03em; line-height: 1.1; }
+        .services-hero h1 span { background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .services-hero p { font-size: 18px; color: #94a3b8; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+        .services-overview { padding: 100px 0; background: var(--background); margin-top: -60px; position: relative; z-index: 20; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .service-card { position: relative; background: #fff; border: 1px solid var(--border); border-radius: 24px; padding: 40px 32px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-1); transform: scaleX(0); transition: transform 0.4s ease; }
+        .service-card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15); border-color: transparent; }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card-icon { width: 72px; height: 72px; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 36px; margin-bottom: 24px; transition: all 0.4s ease; }
+        .service-card:hover .service-card-icon { background: var(--gradient-1); transform: scale(1.1) rotate(-5deg); }
+        .service-card-badge { display: inline-block; background: rgba(37, 99, 235, 0.1); color: var(--primary); padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+        .service-card h3 { font-size: 24px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px; }
+        .service-card > p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; }
+        .service-card-features { list-style: none; margin-bottom: 24px; }
+        .service-card-features li { display: flex; align-items: center; gap: 10px; padding: 8px 0; font-size: 14px; color: var(--text-secondary); }
+        .service-card-features li::before { content: '✓'; width: 20px; height: 20px; background: rgba(16, 185, 129, 0.1); color: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; flex-shrink: 0; }
+        .service-card-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--primary); text-decoration: none; transition: gap 0.3s ease; }
+        .service-card-link:hover { gap: 12px; }
+
+        .service-detail { padding: 100px 0; background: var(--background); }
+        .service-detail:nth-child(even) { background: var(--background-secondary); }
+        .service-detail-content { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .service-detail:nth-child(even) .service-detail-content { direction: rtl; }
+        .service-detail:nth-child(even) .service-detail-content > * { direction: ltr; }
+        .service-detail-text h2 { font-size: clamp(32px, 3vw, 42px); font-weight: 800; color: var(--text-primary); margin-bottom: 16px; letter-spacing: -0.02em; }
+        .service-detail-badge { display: inline-block; background: var(--gradient-1); color: #fff; padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+        .service-detail-text > p { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
+        .service-detail-features { list-style: none; margin-bottom: 32px; }
+        .service-detail-features li { display: flex; align-items: center; gap: 12px; padding: 12px 0; font-size: 15px; color: var(--text-secondary); border-bottom: 1px solid var(--border); }
+        .service-detail-features li:last-child { border-bottom: none; }
+        .service-detail-features li::before { content: '✓'; width: 24px; height: 24px; background: var(--gradient-1); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; flex-shrink: 0; }
+        .btn-service { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-1); color: #fff; padding: 16px 32px; border-radius: 12px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3); }
+        .btn-service:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4); }
+
+        .service-visual-card { background: var(--gradient-3); border-radius: 24px; padding: 48px; position: relative; overflow: hidden; }
+        .service-visual-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 30%, rgba(37, 99, 235, 0.3) 0%, transparent 50%), radial-gradient(ellipse at 70% 70%, rgba(6, 182, 212, 0.2) 0%, transparent 50%); pointer-events: none; }
+        .service-visual-content { position: relative; z-index: 10; }
+        .service-visual-icon { font-size: 64px; margin-bottom: 32px; text-align: center; }
+        .service-specs { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 24px; }
+        .service-specs h4 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .spec-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .spec-row:last-child { border-bottom: none; }
+        .spec-label { font-size: 14px; color: #94a3b8; }
+        .spec-value { font-size: 14px; color: #06b6d4; font-weight: 600; }
+
+        .comparison-section { padding: 100px 0; background: var(--background-secondary); }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .section-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(37, 99, 235, 0.1); border-radius: 50px; padding: 8px 20px; margin-bottom: 20px; font-size: 13px; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-title { font-size: clamp(32px, 4vw, 44px); font-weight: 800; color: var(--text-primary); margin-bottom: 16px; letter-spacing: -0.02em; }
+        .section-subtitle { font-size: 18px; color: var(--text-secondary); line-height: 1.7; }
+        .comparison-table-wrapper { background: #fff; border: 1px solid var(--border); border-radius: 24px; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); }
+        .comparison-table { width: 100%; border-collapse: collapse; }
+        .comparison-table thead { background: var(--gradient-3); }
+        .comparison-table th { padding: 20px 24px; text-align: left; font-size: 14px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; }
+        .comparison-table td { padding: 20px 24px; font-size: 14px; color: var(--text-secondary); border-bottom: 1px solid var(--border); }
+        .comparison-table tbody tr:last-child td { border-bottom: none; }
+        .comparison-table tbody tr:hover { background: rgba(37, 99, 235, 0.03); }
+        .check-yes { color: var(--success); font-weight: 700; }
+        .check-no { color: var(--text-muted); }
+
+        .cta-section { padding: 100px 0; background: var(--background); text-align: center; }
+        .cta-box { max-width: 800px; margin: 0 auto; background: var(--gradient-3); border-radius: 32px; padding: 80px 60px; position: relative; overflow: hidden; }
+        .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 30%, rgba(37, 99, 235, 0.3) 0%, transparent 50%), radial-gradient(ellipse at 70% 70%, rgba(6, 182, 212, 0.2) 0%, transparent 50%); pointer-events: none; }
+        .cta-content { position: relative; z-index: 10; }
+        .cta-box h2 { font-size: clamp(32px, 4vw, 44px); font-weight: 800; color: #fff; margin-bottom: 16px; }
+        .cta-box p { font-size: 18px; color: #94a3b8; margin-bottom: 40px; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-cta-primary { background: var(--gradient-1); color: #fff; padding: 18px 36px; border-radius: 12px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(37, 99, 235, 0.4); }
+        .btn-cta-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(37, 99, 235, 0.5); }
+        .btn-cta-secondary { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); color: #fff; padding: 18px 36px; border-radius: 12px; font-size: 16px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.3s ease; }
+        .btn-cta-secondary:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-3px); }
+
+        .footer { background: var(--background-dark); padding: 80px 0 40px; color: #fff; }
+        .footer-content { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 60px; margin-bottom: 60px; }
+        .footer-brand { max-width: 300px; }
+        .footer-logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+        .footer-logo-symbol { color: var(--accent); font-size: 28px; }
+        .footer-description { font-size: 15px; color: #64748b; line-height: 1.7; margin-bottom: 24px; }
+        .footer-social { display: flex; gap: 12px; }
+        .social-link { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #94a3b8; text-decoration: none; font-size: 14px; transition: all 0.3s ease; }
+        .social-link:hover { background: var(--primary); color: #fff; transform: translateY(-3px); }
+        .footer-title { font-size: 14px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 14px; }
+        .footer-links a { color: #64748b; text-decoration: none; font-size: 15px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: #06b6d4; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-bottom p { font-size: 14px; color: #64748b; }
+
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .service-detail-content { grid-template-columns: 1fr; gap: 48px; }
+            .service-detail:nth-child(even) .service-detail-content { direction: ltr; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .services-hero h1 { font-size: 36px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; gap: 40px; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            .cta-box { padding: 48px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" style="background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; right: 0; z-index: 1000;">
+        <div class="container nav-container" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px;">
+            <div class="logo" style="display: flex; align-items: center; gap: 8px; color: #fff; font-weight: 700; font-size: 20px;">
+                <span style="color: #06b6d4; font-size: 24px;">◈</span>
+                <span>Leytewebhost</span>
+            </div>
+            <ul class="nav-menu" style="display: flex; list-style: none; gap: 32px;">
+                <li><a href="index.html" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Home</a></li>
+                <li><a href="services.html" style="color: #06b6d4; text-decoration: none; font-size: 14px; font-weight: 500;">Services</a></li>
+                <li><a href="webhost.html" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Web Hosting</a></li>
+                <li><a href="pricing.html" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Pricing</a></li>
+                <li><a href="about.html" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">About</a></li>
+                <li><a href="contact.html" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Contact</a></li>
+            </ul>
+            <div style="display: flex; gap: 16px; align-items: center;">
+                <a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;">Sign In</a>
+                <a href="#" style="background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%); color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 600;">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="services-hero">
+        <div class="container">
+            <div class="services-hero-content">
+                <div class="hero-badge">🚀 Our Services</div>
+                <h1>Hosting Solutions for<br><span>Every Need</span></h1>
+                <p>From simple websites to complex enterprise applications, we have the perfect hosting solution to power your success online.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-overview">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card-icon">🌐</div>
+                    <span class="service-card-badge">Popular</span>
+                    <h3>Shared Hosting</h3>
+                    <p>Perfect for personal websites, blogs, and small businesses. Get started quickly with our easy-to-use control panel.</p>
+                    <ul class="service-card-features">
+                        <li>Unlimited bandwidth</li>
+                        <li>Free SSL certificate</li>
+                        <li>One-click app installer</li>
+                        <li>24/7 support</li>
+                    </ul>
+                    <a href="#shared" class="service-card-link">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">🖥️</div>
+                    <span class="service-card-badge">Powerful</span>
+                    <h3>VPS Hosting</h3>
+                    <p>Dedicated resources with full root access. Ideal for growing websites and applications that need more control.</p>
+                    <ul class="service-card-features">
+                        <li>Dedicated resources</li>
+                        <li>Full root access</li>
+                        <li>SSD storage</li>
+                        <li>Scalable plans</li>
+                    </ul>
+                    <a href="#vps" class="service-card-link">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">🏢</div>
+                    <span class="service-card-badge">Enterprise</span>
+                    <h3>Dedicated Servers</h3>
+                    <p>Maximum performance with complete hardware control. Built for high-traffic websites and mission-critical applications.</p>
+                    <ul class="service-card-features">
+                        <li>Full hardware control</li>
+                        <li>Enterprise processors</li>
+                        <li>Custom configurations</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="#dedicated" class="service-card-link">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">☁️</div>
+                    <span class="service-card-badge">Scalable</span>
+                    <h3>Cloud Hosting</h3>
+                    <p>Flexible, scalable infrastructure that grows with your business. Pay only for what you use.</p>
+                    <ul class="service-card-features">
+                        <li>Auto-scaling</li>
+                        <li>Load balancing</li>
+                        <li>Global CDN</li>
+                        <li>99.99% uptime</li>
+                    </ul>
+                    <a href="#cloud" class="service-card-link">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">📝</div>
+                    <span class="service-card-badge">Optimized</span>
+                    <h3>WordPress Hosting</h3>
+                    <p>Optimized specifically for WordPress. Lightning-fast speeds with automatic updates and backups.</p>
+                    <ul class="service-card-features">
+                        <li>WordPress optimized</li>
+                        <li>Auto updates</li>
+                        <li>Staging environment</li>
+                        <li>Expert support</li>
+                    </ul>
+                    <a href="#wordpress" class="service-card-link">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">🔒</div>
+                    <span class="service-card-badge">Secure</span>
+                    <h3>SSL Certificates</h3>
+                    <p>Protect your website and build trust with visitors. Multiple certificate options for every need.</p>
+                    <ul class="service-card-features">
+                        <li>Domain validation</li>
+                        <li>Organization validation</li>
+                        <li>Extended validation</li>
+                        <li>Wildcard certificates</li>
+                    </ul>
+                    <a href="pricing.html" class="service-card-link">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail" id="shared">
+        <div class="container">
+            <div class="service-detail-content">
+                <div class="service-detail-text">
+                    <span class="service-detail-badge">Popular Choice</span>
+                    <h2>Shared Hosting</h2>
+                    <p>Our shared hosting plans are perfect for personal websites, blogs, and small businesses. Get started quickly with our easy-to-use control panel and one-click installers.</p>
+                    <ul class="service-detail-features">
+                        <li>Unlimited SSD storage</li>
+                        <li>Unmetered bandwidth</li>
+                        <li>Free SSL certificate</li>
+                        <li>Free domain for 1 year</li>
+                        <li>70+ one-click installers</li>
+                        <li>24/7 expert support</li>
+                    </ul>
+                    <a href="pricing.html" class="btn-service">View Plans →</a>
+                </div>
+                <div class="service-visual-card">
+                    <div class="service-visual-content">
+                        <div class="service-visual-icon">🌐</div>
+                        <div class="service-specs">
+                            <h4>Technical Specs</h4>
+                            <div class="spec-row"><span class="spec-label">Storage</span><span class="spec-value">Unlimited SSD</span></div>
+                            <div class="spec-row"><span class="spec-label">Bandwidth</span><span class="spec-value">Unmetered</span></div>
+                            <div class="spec-row"><span class="spec-label">Databases</span><span class="spec-value">Unlimited</span></div>
+                            <div class="spec-row"><span class="spec-label">Email Accounts</span><span class="spec-value">Unlimited</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail" id="vps">
+        <div class="container">
+            <div class="service-detail-content">
+                <div class="service-detail-text">
+                    <span class="service-detail-badge">High Performance</span>
+                    <h2>VPS Hosting</h2>
+                    <p>Get dedicated resources with full root access. Our VPS plans are ideal for growing websites and applications that need more power and control.</p>
+                    <ul class="service-detail-features">
+                        <li>Dedicated CPU & RAM</li>
+                        <li>Full root access</li>
+                        <li>NVMe SSD storage</li>
+                        <li>Choice of OS</li>
+                        <li>DDoS protection included</li>
+                        <li>99.99% uptime guarantee</li>
+                    </ul>
+                    <a href="pricing.html" class="btn-service">View Plans →</a>
+                </div>
+                <div class="service-visual-card">
+                    <div class="service-visual-content">
+                        <div class="service-visual-icon">🖥️</div>
+                        <div class="service-specs">
+                            <h4>Technical Specs</h4>
+                            <div class="spec-row"><span class="spec-label">CPU</span><span class="spec-value">Up to 8 vCPU</span></div>
+                            <div class="spec-row"><span class="spec-label">RAM</span><span class="spec-value">Up to 32 GB</span></div>
+                            <div class="spec-row"><span class="spec-label">Storage</span><span class="spec-value">Up to 640 GB NVMe</span></div>
+                            <div class="spec-row"><span class="spec-label">Bandwidth</span><span class="spec-value">Up to 10 TB</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail" id="dedicated">
+        <div class="container">
+            <div class="service-detail-content">
+                <div class="service-detail-text">
+                    <span class="service-detail-badge">Maximum Power</span>
+                    <h2>Dedicated Servers</h2>
+                    <p>Get complete hardware control with our dedicated servers. Perfect for high-traffic websites, large databases, and mission-critical applications.</p>
+                    <ul class="service-detail-features">
+                        <li>Enterprise-grade processors</li>
+                        <li>Full server customization</li>
+                        <li>Private network options</li>
+                        <li>Dedicated IP addresses</li>
+                        <li>Hardware replacement SLA</li>
+                        <li>Priority support channel</li>
+                    </ul>
+                    <a href="pricing.html" class="btn-service">View Plans →</a>
+                </div>
+                <div class="service-visual-card">
+                    <div class="service-visual-content">
+                        <div class="service-visual-icon">🏢</div>
+                        <div class="service-specs">
+                            <h4>Technical Specs</h4>
+                            <div class="spec-row"><span class="spec-label">Processor</span><span class="spec-value">AMD EPYC / Intel Xeon</span></div>
+                            <div class="spec-row"><span class="spec-label">RAM</span><span class="spec-value">Up to 512 GB</span></div>
+                            <div class="spec-row"><span class="spec-label">Storage</span><span class="spec-value">Up to 8 TB NVMe</span></div>
+                            <div class="spec-row"><span class="spec-label">Network</span><span class="spec-value">40 Gbps</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail" id="cloud">
+        <div class="container">
+            <div class="service-detail-content">
+                <div class="service-detail-text">
+                    <span class="service-detail-badge">Scalable</span>
+                    <h2>Cloud Hosting</h2>
+                    <p>Flexible, scalable infrastructure that grows with your business. Pay only for what you use, scale instantly when you need more resources.</p>
+                    <ul class="service-detail-features">
+                        <li>Auto-scaling resources</li>
+                        <li>Load balancing included</li>
+                        <li>Global CDN integration</li>
+                        <li>API-driven management</li>
+                        <li>High availability architecture</li>
+                        <li>Real-time analytics</li>
+                    </ul>
+                    <a href="pricing.html" class="btn-service">View Plans →</a>
+                </div>
+                <div class="service-visual-card">
+                    <div class="service-visual-content">
+                        <div class="service-visual-icon">☁️</div>
+                        <div class="service-specs">
+                            <h4>Technical Specs</h4>
+                            <div class="spec-row"><span class="spec-label">Scaling</span><span class="spec-value">Auto / Manual</span></div>
+                            <div class="spec-row"><span class="spec-label">Availability</span><span class="spec-value">99.99% SLA</span></div>
+                            <div class="spec-row"><span class="spec-label">Locations</span><span class="spec-value">15 Global Regions</span></div>
+                            <div class="spec-row"><span class="spec-label">Billing</span><span class="spec-value">Pay-as-you-go</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail" id="wordpress">
+        <div class="container">
+            <div class="service-detail-content">
+                <div class="service-detail-text">
+                    <span class="service-detail-badge">Optimized</span>
+                    <h2>WordPress Hosting</h2>
+                    <p>Hosting optimized specifically for WordPress. Enjoy lightning-fast speeds, automatic updates, and expert WordPress support.</p>
+                    <ul class="service-detail-features">
+                        <li>WordPress pre-installed</li>
+                        <li>Automatic core updates</li>
+                        <li>Staging environment</li>
+                        <li>WP-CLI access</li>
+                        <li>Free premium themes</li>
+                        <li>WordPress expert support</li>
+                    </ul>
+                    <a href="pricing.html" class="btn-service">View Plans →</a>
+                </div>
+                <div class="service-visual-card">
+                    <div class="service-visual-content">
+                        <div class="service-visual-icon">📝</div>
+                        <div class="service-specs">
+                            <h4>Technical Specs</h4>
+                            <div class="spec-row"><span class="spec-label">PHP Version</span><span class="spec-value">8.0 - 8.4</span></div>
+                            <div class="spec-row"><span class="spec-label">CDN</span><span class="spec-value">Included Free</span></div>
+                            <div class="spec-row"><span class="spec-label">Backups</span><span class="spec-value">Daily + On-Demand</span></div>
+                            <div class="spec-row"><span class="spec-label">Caching</span><span class="spec-value">LiteSpeed Cache</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">📊 Compare Plans</div>
+                <h2 class="section-title">Feature Comparison</h2>
+                <p class="section-subtitle">See how our hosting solutions compare to find the perfect fit for your needs.</p>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>Feature</th><th>Shared</th><th>VPS</th><th>Dedicated</th><th>Cloud</th><th>WordPress</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Storage</td><td>Unlimited</td><td>Up to 1TB</td><td>Up to 8TB</td><td>Scalable</td><td>Unlimited</td></tr>
+                        <tr><td>Bandwidth</td><td>Unmetered</td><td>10TB</td><td>Unmetered</td><td>Pay-as-you-go</td><td>Unmetered</td></tr>
+                        <tr><td>SSL Certificate</td><td class="check-yes">✓ Free</td><td class="check-yes">✓ Free</td><td class="check-yes">✓ Free</td><td class="check-yes">✓ Free</td><td class="check-yes">✓ Free</td></tr>
+                        <tr><td>Daily Backups</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
+                        <tr><td>Root Access</td><td class="check-no">✗</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-no">✗</td></tr>
+                        <tr><td>Dedicated IP</td><td>Optional</td><td class="check-yes">✓</td><td class="check-yes">✓ Multiple</td><td class="check-yes">✓</td><td>Optional</td></tr>
+                        <tr><td>24/7 Support</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓ Priority</td><td class="check-yes">✓</td><td class="check-yes">✓ WP Expert</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2>Need Help Choosing?</h2>
+                    <p>Our hosting experts are here to guide you to the perfect solution for your specific needs.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn-cta-primary">Talk to an Expert</a>
+                        <a href="pricing.html" class="btn-cta-secondary">Compare Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo"><span class="footer-logo-symbol">◈</span><span>Leytewebhost</span></div>
+                    <p class="footer-description">Premium web hosting solutions crafted for businesses that demand excellence.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">Li</a>
+                        <a href="#" class="social-link">Tw</a>
+                        <a href="#" class="social-link">Fb</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Shared Hosting</a></li>
+                        <li><a href="services.html">VPS Hosting</a></li>
+                        <li><a href="services.html">Dedicated Servers</a></li>
+                        <li><a href="services.html">Cloud Hosting</a></li>
+                        <li><a href="services.html">Managed WordPress</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Data Centers</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Knowledge Base</a></li>
+                        <li><a href="#">Status Page</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Leytewebhost. All rights reserved.</p>
+                <p>Crafted with precision and care.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
